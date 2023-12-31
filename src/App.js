@@ -8,7 +8,16 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className='App'></div>
+      <div className='App'>
+        <div style={{
+          width:'150px',
+          height:'150px',
+          backgroundColor:'#eee',
+          margin:'10px'
+        }}>
+          nemo
+        </div>
+      </div>
     )
   }
 
