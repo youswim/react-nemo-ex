@@ -10,7 +10,7 @@ const Nemo = (props) => {
     <div className="App">
       {nemo_count.map((num, idx) => {
         return (
-          <div key={idx} style={{ width: "150px", height: "150px", backgroundColor: "#eee", margin: "10px", }}>
+          <div key={idx} className="Nemo" style={{ width: "150px", height: "150px", backgroundColor: "grey", margin: "10px", }}>
             nemo
           </div>
         );
