@@ -5,29 +5,30 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: 3,
     };
+    this.div = React.createRef();
   }
 
-  addNemo = () => {
-    this.setState({count: this.state.count + 1});
-    console.log("add nemo");
+  hoverEvent = (e) => {
+    console.log(e);
+    console.log(e.target);
+
+    e.target.style.background = "#eee"
   }
-  
-  removeNemo = () => {
-    if(this.state.count <= 0 ) {
-      window.alert("네모가 없어요");
-      return;
-    }
-    this.setState({count: this.state.count - 1});
-    console.log("remove nemo");
+
+  componentDidMount(){
+    this.div.current.addEventListener("mouseover", this.hoverEvent)
+  }
+
+  componentWillUnmount() {
+    this.div.current.removeEventListener("mouseover", this.hoverEvent);
   }
 
   render() {
     const nemo_count = Array.from({ length: this.state.count }, (v, i) => i);
     console.log(nemo_count);
     return (
-      <div className="App">
+      <div className="App" ref={this.div}>
         <Nemo/>
       </div>
     );
